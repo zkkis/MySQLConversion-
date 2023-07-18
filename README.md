@@ -10,11 +10,12 @@ sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/,/g'
 ```
 ^(.*)$
 ```
-
+一键生成PPT：https://gamma.app/signup?r=sqgovd3iif5btr4
 
 演示视频
 
-# [视频]([https://gamma.app/signup?r=sqgovd3iif5btr4](https://zkk-1300025204.cos.ap-nanjing.myqcloud.com/20230718-101306.mp4)https://zkk-1300025204.cos.ap-nanjing.myqcloud.com/20230718-101306.mp4)
+# [视频]
+https://zkk-1300025204.cos.ap-nanjing.myqcloud.com/20230718-101306.mp4
 
 AI工具大合集更新中
 https://yv4kfv1n3j.feishu.cn/docx/MRyxdaqz8ow5RjxyL1ucrvOYnnH
