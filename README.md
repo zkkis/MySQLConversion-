@@ -11,9 +11,6 @@ sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/,/g'
 ^(.*)$
 ```
 一键生成PPT：https://gamma.app/signup?r=sqgovd3iif5btr4
-
-演示视频
-
 # [视频]
 https://zkk-1300025204.cos.ap-nanjing.myqcloud.com/20230718-101306.mp4
 
