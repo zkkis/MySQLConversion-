@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>单号转换</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    textarea, button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 50%; /* 设置宽度为屏幕宽度的50% */
+    }
+
+    #output {
+      background-color: #fff;
+      padding: 10px;
+      overflow: auto;
+      min-height: 100px;
+    }
+
+    button {
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function resizeInput() {
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth;
+      var input = document.getElementById('input');
+      input.style.width = (screenWidth * 0.5) + "px";
+    }
+
+    function convert() {
+      var input = document.getElementById('input').value;
+      var numbers = input.split("\n");
+      var output = "";
+
+      // 处理每个单号
+      for (var i = 0; i < numbers.length; i++) {
+        var trimmedNumber = numbers[i].trim();
+        
+        // 仅添加非空行
+        if (trimmedNumber !== "") {
+          output += "'" + trimmedNumber + "',\n";
+        }
+      }
+
+      // 如果最后一行是空行，则移除
+      if (output.endsWith(",\n")) {
+        output = output.slice(0, -2);
+      }
+
+      // 将结果显示在页面上
+      document.getElementById('output').innerText = output;
+    }
+
+    function clearInput() {
+      // 清空输入框和输出结果
+      document.getElementById('input').value = "";
+      document.getElementById('output').innerText = "";
+    }
+
+    function copyOutput() {
+      var outputText = document.getElementById('output').innerText;
+
+      // 创建一个临时输入框
+      var tempInput = document.createElement("textarea");
+      document.body.appendChild(tempInput);
+      tempInput.value = outputText;
+      
+      // 选中临时输入框的内容并执行复制操作
+      tempInput.select();
+      document.execCommand("copy");
+      
+      // 移除临时输入框
+      document.body.removeChild(tempInput);
+    }
+
+    // 页面加载时调整输入框大小
+    window.addEventListener('load', resizeInput);
+
+    // 页面大小发生变化时重新调整输入框大小
+    window.addEventListener('resize', resizeInput);
+  </script>
+</head>
+<body>
+  <h1>单号转换工具</h1>
+  <textarea id="input" rows="10" cols="30"></textarea>
+  <br>
+  <button onclick="convert()">转换</button>
+  <button onclick="clearInput()">清空内容</button>
+  <button onclick="copyOutput()">复制</button>
+  <br><br>
+  <p id="output"></p>
+</body>
+</html>
